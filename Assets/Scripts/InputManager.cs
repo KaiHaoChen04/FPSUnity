@@ -7,14 +7,23 @@ public class InputManager : MonoBehaviour
     private PlayerInput playerInput;
     private PlayerInput.OnFootActions onFoot;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-
+        playerInput = new PlayerInput();
+        onFoot = playerInput.OnFoot;
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+    private void onEnable()
+    {
+        onFoot.Enable();
+    }
+    private void onDisable()
+    {
+        onFoot.Disable();
     }
 }
