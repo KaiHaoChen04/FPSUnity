@@ -7,6 +7,8 @@ public class PlayerMotor : MonoBehaviour
     private CharacterController controller;
     private Vector3 playerVelocity;
     public float speed = 5f;
+    private bool isGrounded;
+    public float gravity = -9.8f;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,5 +29,8 @@ public class PlayerMotor : MonoBehaviour
         moveDirection.z = input.y;
         controller.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime); //Transform will transform the coordinates to the actual direction in the world
         //deltaTime ensures it update regardless of FPS     
+        playerVelocity.y += gravity * Time.deltaTime;
+        controller.Move(playerVelocity * Time.deltaTime);
+        Debug.Log(playerVelocity.y);
     }
 }
