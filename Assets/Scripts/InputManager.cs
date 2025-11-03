@@ -14,6 +14,7 @@ public class InputManager : MonoBehaviour
         playerInput = new PlayerInput();
         onFoot = playerInput.OnFoot;
         motor = GetComponent<PlayerMotor>();
+        onFoot.Jump.performed += ctx => motor.Jump(); //anytime jump is performed, we will call context callback function and call jump
     }
 
     // Update is called once per frame
@@ -23,11 +24,11 @@ public class InputManager : MonoBehaviour
         motor.ProcessMove(onFoot.Movement.ReadValue<Vector2>());
 
     }
-    private void onEnable()
+    private void OnEnable()
     {
         onFoot.Enable();
     }
-    private void onDisable()
+    private void OnDisable()
     {
         onFoot.Disable();
     }

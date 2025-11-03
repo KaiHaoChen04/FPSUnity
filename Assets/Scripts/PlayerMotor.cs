@@ -9,7 +9,7 @@ public class PlayerMotor : MonoBehaviour
     public float speed = 5f;
     private bool isGrounded;
     public float gravity = -9.8f;
-    public float jumpHeight = 3f;
+    public float jumpHeight = 1.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,7 @@ public class PlayerMotor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        isGrounded = controller.isGrounded;
     }
     //receive input from input manager script and apply to character controller
     public void ProcessMove(Vector2 input)
@@ -38,7 +38,7 @@ public class PlayerMotor : MonoBehaviour
         controller.Move(playerVelocity * Time.deltaTime);
         Debug.Log(playerVelocity.y);
     }
-    public void jump()
+    public void Jump()
     {
         if (isGrounded)
         {
