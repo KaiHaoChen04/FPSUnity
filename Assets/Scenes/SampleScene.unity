@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!20 &250706661 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1838236143723604155, guid: 623a96d9b3ffa4827a219ad018f264ba, type: 3}
+  m_PrefabInstance: {fileID: 1018864081349782281}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &563781961
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,6 +468,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4833ef861fd4c8885ab748eb681152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &895416279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895416272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c08e31e4a5d2425a8aa8adab467d3ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 250706661}
+  xSensitivity: 30
+  ySensitivity: 30
 --- !u!1 &938272106
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,6 +860,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2982155963800162986, guid: 623a96d9b3ffa4827a219ad018f264ba, type: 3}
       insertIndex: -1
       addedObject: {fileID: 895416273}
+    - targetCorrespondingSourceObject: {fileID: 2982155963800162986, guid: 623a96d9b3ffa4827a219ad018f264ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 895416279}
   m_SourcePrefab: {fileID: 100100000, guid: 623a96d9b3ffa4827a219ad018f264ba, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
